@@ -1,0 +1,36 @@
+def hacer_encuesta():
+    print("Bienvenido a la encuesta sobre ser un buen padre/madre.")
+    print("Por favor, responde las siguientes preguntas con 'S' (Sí) o 'N' (No).")
+
+    preguntas = [
+        "¿Estarías dispuesto/a a sacrificar tiempo y esfuerzo por el bienestar de tus hijos? (S/N): ",
+        "¿Te consideras una persona paciente y comprensiva? (S/N): ",
+        "¿Estás dispuesto/a a aprender y adaptarte a las necesidades cambiantes de tus hijos? (S/N): ",
+        "¿Estarías presente y apoyarías a tus hijos en sus logros y desafíos? (S/N): ",
+        "¿Te comprometerías a establecer límites y normas claras para tus hijos? (S/N): ",
+        "¿Estarías dispuesto/a a jugar y pasar tiempo de calidad con tus hijos? (S/N): ",
+        "¿Te preocupas por la educación y el desarrollo emocional de tus hijos? (S/N): ",
+        "¿Estás dispuesto/a a enseñarles valores importantes y respeto hacia los demás? (S/N): ",
+        "¿Estarías dispuesto/a a buscar el equilibrio entre el trabajo y la vida familiar? (S/N): ",
+        "¿Te esfuerzas por ser un modelo positivo y ejemplo a seguir para tus hijos? (S/N): "
+    ]
+
+    respuestas = []
+
+    for pregunta in preguntas:
+        respuesta = input(pregunta).strip().upper()
+        respuestas.append(respuesta)
+
+    puntaje = respuestas.count("S")
+    total_preguntas = len(preguntas)
+    porcentaje_buen_padre = (puntaje / total_preguntas) * 100
+
+    print("\n¡Gracias por completar la encuesta!")
+    print(f"Tu puntaje como potencial buen padre/madre es: {porcentaje_buen_padre:.2f}%")
+
+    if porcentaje_buen_padre >= 70:
+        print("Basado en tus respuestas, parece que serías un buen padre/madre. ¡Felicidades!")
+    else:
+        print("Tus respuestas indican que podrías mejorar para ser un mejor padre/madre en el futuro.")
+
+hacer_encuesta()
